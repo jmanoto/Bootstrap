@@ -1,0 +1,196 @@
+// ModernPixels
+// --------------------------------------------------------------------------------------------------- //
+
+// A super clean and modern theme for VanillaBootstrap.
+
+
+// Bootstrap Variables
+// --------------------------------------------------------------------------------------------------- //
+	
+	@bodyBackground: #f4f4f4;
+	@linkColor: #379ad3;
+	@linkColorHover: #333;
+	@textColor: #555;
+	
+
+	.box {
+		background-color: #fff;
+		.border-radius(3px);
+		.box-shadow(0 1px 1px rgba(0,0,0,0.15));
+	}
+
+
+// Yeah... it's a mess
+// --------------------------------------------------------------------------------------------------- //
+	
+	a:not(.btn):not(.Bookmark) {
+		.transition(250ms linear all);
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+	}
+	
+	h3 {
+		font-size: 1.25em;
+		line-height: 1.8em;
+		margin-top: 0.9em;
+		margin-bottom: 0.7em;
+	}
+	
+	.bs-docs-canvas {
+		background: #f4f4f4;
+	}
+	
+	.bs-docs-social, .footer {
+		background: @white;
+	}
+	
+	.jumbotron {
+		background-color: @blue;
+		background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, .07) 50%, transparent 50%), -webkit-linear-gradient(0deg, rgba(255, 255, 255, .13) 50%, transparent 50%), -webkit-linear-gradient(0deg, transparent 50%, rgba(255, 255, 255, .17) 50%), -webkit-linear-gradient(0deg, transparent 50%, rgba(255, 255, 255, .19) 50%);
+		background-size: 13px, 29px, 37px, 53px;
+	}
+	
+	#content {
+		padding: 15px;
+		.box-sizing(border-box);
+		.box;
+	}
+	
+	.DataList.Comments {
+		.Item {
+			border-bottom-color: @grayLighter;
+			&:first-child {
+				padding-top: 0;
+				border-top-width: 0;
+			}
+			.Item-Header {
+				overflow: visible;
+			}
+		}
+	}
+	
+	.ActivityComments {
+		.Item:first-child {
+			padding-top: 6px;
+		}
+	}
+	
+	.ProfilePhoto {
+				.border-radius(3px);
+			}
+	
+	.MessageList {
+		&.Discussion {
+			padding: 0;
+			.ItemDiscussion {
+				margin-bottom: 0;
+				padding: 0;
+			}
+		}
+		.Item {
+			.Item-Header {
+				overflow: visible;
+				margin-bottom: 0;
+			}
+			.AuthorWrap {
+				display: inline;
+				a {
+					color: black;
+					font-size: 13px;
+				}
+			}
+			.Message {
+				font-size: 13px;
+				padding-left: 50px;
+				margin-top: 5px !important;
+			}
+			.Meta {
+				display: inline;
+				.DateCreated {
+					float: right;
+					a {
+						color: rgba(0, 0, 0, 0.34);
+					}
+				}
+				.Category {
+					margin-left: 5px;
+					color: rgba(0, 0, 0, 0.34);
+				}
+			}
+		}
+	}
+	
+	.DataBox-Comments {
+		padding: 0;
+		margin-top: 20px;
+	}
+	
+	.Discussion .PageTitle h1,
+	h2.CommentHeading,
+	.CommentForm .H {
+		font-size: 1.25em;
+		line-height: 1.25em;
+		padding-bottom: 15px;
+		border-bottom: 1px solid @grayLighter;
+	}
+	
+	.CommentForm {
+		textarea {
+			margin-bottom: 0;
+		}
+		.Buttons {
+			padding-bottom: 0;
+		}
+	}
+	
+	.nav-list {
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: 300;
+		li {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			&.active a {
+				@box-shadow: 0 1px 3px black inset, 0 1px 0 white;
+				.box-shadow(@box-shadow);
+				background-color: #333 !important;
+				color: @white;
+			}
+			a {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				color: @textColor;
+				font-weight: 300;
+				.border-radius(3px);
+				.transition(250ms linear all);
+				&:hover {
+					background: rgba(0, 0, 0, 0.1);
+				}
+			}
+			.Aside {
+				top: -3px;
+			}
+			.badge {
+				background-color: rgba(0,0,0,.5);
+				@box-shadow: 0 1px 3px rgba(0,0,0,.5) inset;
+				.box-shadow(@box-shadow);
+				.border-radius(3px);
+			}
+		}
+	}
+	
+	.Entry.register #content .FormWrapper {
+		background-color: transparent;
+		padding: 0;
+	}
+	
+	.QnA-UnansweredQuestions .Aside {
+		margin-top: -25px;
+	}
+	
+	.TagCloud a,
+	.InlineTags a {
+		.transition(none) !important;
+	}
