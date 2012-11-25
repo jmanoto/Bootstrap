@@ -1,0 +1,41 @@
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    @include box-sizing(border-box);
+    height: auto;
+}
+
+textarea {
+    @include box-sizing(border-box);
+}
+
+.TextBoxWrapper {
+    padding-right: 0;
+}
+
+input.SmallInput,
+input.InputBox,
+textarea {
+    
+    &:focus {
+        background: $inputBackground;
+    }
+    
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 3px 0 0;
+}

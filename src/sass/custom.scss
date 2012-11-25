@@ -1,0 +1,52 @@
+// Imports
+// ----------------------------------------
+
+    // Compass extensions
+    // ------------------------------------
+    @import "compass/css3";
+    @import "compass/utilities";
+
+    // Bootstrap
+    // ------------------------------------
+    @import "bootstrap"; 
+
+
+// Variables
+// ----------------------------------------
+// The variables are included here to make
+// sure that they override their defaults
+
+    $btnBorder: rgba(0,0,0,.15)
+                rgba(0,0,0,.15)
+                rgba(0,0,0,.25);
+
+
+// Vanilla incs.
+// ----------------------------------------
+// The source files of this theme are split
+// up into different sections according to
+// which parts of Vanilla the code alters
+
+    @import "inc/activity";
+    @import "inc/base";
+    @import "inc/breadcrumb";
+    @import "inc/buttons";
+    @import "inc/category";
+    @import "inc/discuss";
+    @import "inc/dropdown";
+    @import "inc/forms";
+    @import "inc/head";
+    @import "inc/panel";
+    @import "inc/profile";
+
+
+// Customizations
+// ----------------------------------------
+    
+    // Add your customizations here or
+    // create a new file and import it
+    // from this file. Note that you
+    // should not edit the core files
+    // found in the inc directory but
+    // rather extend upon the core files
+    // using SASS or SCSS.

@@ -1,0 +1,30 @@
+.Button {
+    @extend .btn;
+    font-weight: normal;
+    border-color: $btnBorder;
+    
+    &:hover {
+        border-color: $btnBorder;
+    }
+    
+    &.NewDiscussion {
+        @extend .btn-primary, .btn-large, .btn-block;   
+    }
+    
+}
+
+.NavButton {
+    @extend .btn;
+}
+
+.ProfileButtons {
+    @extend .btn;
+}
+
+.Active {
+    @extend .active;
+}
+
+.ButtonGroup.Open .Button.Handle {
+    @extend .active;
+}

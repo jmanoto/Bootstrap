@@ -1,0 +1,94 @@
+.MessageList {
+    
+    .PageTitle h1 {
+        margin-top: 0;
+    }
+    
+    .ItemDiscussion {
+        padding: 8px 0;
+    }
+    
+    .Reactions {
+        margin-left: 0;
+    }
+    
+}
+
+.DataList {
+
+    .Item {
+        padding: 8px 0;
+        border-color: $tableBorder;
+        
+        &.Read {
+            @include opacity(0.5);
+            background: none;
+            
+            &:hover {
+                @include opacity(1);
+            }
+            
+            .Title a {
+                color: $textColor;
+            }
+            
+        }
+        
+    }
+    
+    .CommentHeader {
+        margin: 5px 0 10px;
+    }
+    
+    .Message {
+        clear: both;
+    }
+    
+    .Reactions {
+        margin-left: 0;
+    }
+    
+}
+
+.DataTable {
+    
+    .Item {
+        
+        &.Read {
+            @include opacity(0.5);
+            background: none;
+            
+            &:hover {
+                @include opacity(1);
+            }
+            
+            .Title a {
+                color: $textColor;
+            }
+            
+        }
+        
+    }
+    
+    td {
+        padding: 8px 0;
+        vertical-align: middle;
+        border-color: $tableBorder;
+    }
+    
+}
+
+.NumberedPager {
+    @extend .pagination;
+
+    a {
+        margin: 0;
+    }
+
+    span {
+        margin: 0;
+        background-color: $paginationActiveBackground;
+        color: $grayLight;
+    }
+
+}

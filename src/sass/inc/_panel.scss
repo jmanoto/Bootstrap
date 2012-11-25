@@ -1,0 +1,54 @@
+#Panel {
+    @extend .span3;
+    @extend [class*="span"];
+    
+    ul {
+        @extend .nav, .nav-list;
+            
+        li {
+            
+            &:first-child {
+                border-top: none !important;
+            }
+            
+            .Sprite {
+                margin: 3px 0 0 0;
+            }
+            
+            &.Active {
+                font-weight: normal !important;
+                
+                .Sprite {
+                    background-image: url("http://cdn.vanillaforums.com/images/sprites-14-fff.png");
+                }
+                
+            }
+            
+            &.Heading {
+                @extend .nav-header;
+            }
+        
+        }
+    
+    }
+    
+    .PanelInfo,
+    .FilterMenu {
+    
+        li {
+            border-top: none;
+            border-bottom: none;
+            padding: 0;
+        }
+            
+    }
+
+    .Count {
+        @extend .badge, .badge-info;
+    }
+    
+    .BoxActivityFilter {
+        margin-top: 0;
+    }
+    
+}

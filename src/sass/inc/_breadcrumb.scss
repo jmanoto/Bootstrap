@@ -1,0 +1,10 @@
+.BreadcrumbsWrapper {
+    @extend .span12;
+    @extend [class*="span"];
+}
+
+.Breadcrumbs {
+    @extend .breadcrumb;
+    
+    display: block;
+}

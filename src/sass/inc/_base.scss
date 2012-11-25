@@ -1,0 +1,40 @@
+* {
+    @include box-sizing(border-box);
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
+}
+
+body {
+    padding-top: 60px;
+}
+
+a {
+    
+    &:hover {
+        text-decoration: none;
+    }
+    
+}
+
+ul, ol {
+    margin: 0;
+}
+
+.H {
+    margin-top: 0;
+}
+
+#Body {
+    @extend .container;
+}
+
+.Row {
+    @extend .row;
+}
+
+#Content {
+    @extend .span9;
+    @extend [class*="span"];
+    margin-left: 20px !important;
+}

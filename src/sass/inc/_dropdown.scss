@@ -1,0 +1,18 @@
+.Dropdown {
+    @extend .dropdown-menu;
+    
+    li hr {
+        @extend .divider;
+    }
+
+}
+
+.Flyout {
+    @extend .dropdown-menu;
+    @extend .pull-right;
+    
+    li hr {
+        @extend .divider;
+    }
+    
+}
