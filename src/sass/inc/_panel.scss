@@ -1,6 +1,4 @@
-#Panel {
-    @extend .span3;
-    @extend [class*="span"];
+aside#Panel {
     
     ul {
         @extend .nav, .nav-list;

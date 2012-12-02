@@ -1,50 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	{asset name="Head"}
-</head>
-<body id="{$BodyID}" class="{$BodyClass}">
-	<div id="Frame">
-		<div class="Head" id="Head">
-			<div class="HeadInner">
-				<div class="Row">
-					<a class="Brand" href="{link path="/"}">{logo}</a>
-					<ul class="Nav">
-						<!-- {dashboard_link} -->
-						{discussions_link}
-						{activity_link}
-						<!-- {inbox_link} -->
-						{custom_menu}
-						<!-- {profile_link} -->
-						<!-- {signinout_link} -->
-					</ul>
-					{searchbox}
-					<ul class="Nav PullRight">
-						{module name="MeModule"}
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="Body">
-			<div class="Row">
-				<div class="BreadcrumbsWrapper">
-					{breadcrumbs}
-				</div>
-				<div class="Column PanelColumn" id="Panel">
-					{asset name="Panel"}
-				</div>
-				<div class="Column ContentColumn" id="Content">
-					{asset name="Content"}
-				</div>
-			</div>
-		</div>
-		<div id="Foot">
-			<div class="Row">
-				<a href="{vanillaurl}" class="PoweredByVanilla" title="Community Software by Vanilla Forums">Powered by Vanilla</a>
-				{asset name="Foot"}
-			</div>
-		</div>
-	</div>
-	{event name="AfterBody"}
-</body>
+<html class="no-js">
+    <head>
+        {asset name="Head"}
+    </head>
+    <body id="{$BodyID}" class="{$BodyClass}">
+        {if InSection(array("Profile", "ActivityList"))}
+            {assign var="Layout" value="Fixed Left"}
+        {elseif InSection("Entry")}
+            {assign var="Layout" value="Fixed Left Fullwidth"}
+        {else}
+            {assign var="Layout" value="Fixed Left"}
+        {/if}
+        <div id="Frame" class="{$Layout}">
+            <header id="Header">
+                <nav id="Navigation">
+                    <div class="Wrapper">
+                        <h1>{logo}</h1>
+                        <ul class="Menu">
+                            {dashboard_link}
+                            {*{home_link}*}
+                            {discussions_link}
+                            {activity_link}
+                            {mydiscussions_link}
+                            {bookmarks_link}
+                            {drafts_link}
+                            {*{inbox_link}*}
+                            {custom_menu}
+                            {*{profile_link}*}
+                            {*{signinout_link}*}
+                        </ul>
+                        <div class="SiteSearch">
+                            {searchbox placeholder="Search the forums"}
+                        </div>
+                    </div>
+                </nav>
+                <section id="Banner">
+                    <div class="Wrapper">
+                        {breadcrumbs}
+                        {module name="MeModule" CssClass="Inline FlyoutRight"}
+                    </div>
+                </section>
+            </header>
+            <section id="Body">
+                <noscript>{t c="Noscript Notice"}</noscript>
+                <div class="Wrapper">
+                    {if !InSection("Entry")}
+                    <aside id="Panel">
+                        {if InSection("Profile")}
+                            <h1 class="H">{$Profile.Name}</h1>
+                        {/if}
+                        {asset name="Panel"}
+                        {if InSection("Profile")}
+                            {module name="UserInfoModule"}
+                        {/if}
+                    </aside>
+                    {/if}
+                    <section id="Content">
+                        {asset name="Content"}
+                    </section>
+                </div>
+            </section>
+            <footer id="Footer">
+                {asset name="Foot"}
+            </footer>
+        </div>
+        {event name="AfterBody"}
+    </body>
 </html>

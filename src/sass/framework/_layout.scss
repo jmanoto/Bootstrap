@@ -1,0 +1,230 @@
+//  Copyright 2012 Kasper Kronborg Isager
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
+@include reset-html5;
+
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+    min-width: $minWidth;
+}
+
+html #Frame {
+    display: none;
+    text-align: left;
+
+    header,
+    footer {
+        clear: both;
+    }
+
+    &.Fluid,
+    &.Fixed {
+        display: block;
+
+        #Panel {
+            display: none;
+        }
+
+        #Content {
+            display: none;
+        }
+
+    }
+
+    &.Left,
+    &.Right {
+
+        #Panel {
+            display: block;
+            width: $panelWidth;
+        }
+
+        #Content {
+            display: block;
+            width: $contentWidth;
+        }
+
+    }
+
+    &.Fixed {
+
+        #Navigation,
+        #Banner {
+
+            .Wrapper {
+                max-width: $maxWidth;
+                margin: 0 auto;
+            }
+        }
+
+        #Body {
+            max-width: $maxWidth;
+            margin: 0 auto;
+        }
+
+    }
+
+    &.Fullwidth {
+
+        #Panel {
+            display: none !important;
+        }
+
+        #Content {
+            width: 100% !important;
+        }
+            
+    }
+
+}
+
+html:not(.flexbox) #Frame {
+
+    header,
+    footer {
+        position: relative;
+    }
+
+    #Body {
+        overflow-x: hidden;
+    }
+
+    &.Fluid,
+    &.Fixed {
+
+        #Body {
+
+            .Wrapper {
+                position: relative;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    &.Left,
+    &.Right {
+
+        #Panel,
+        #Content {
+            position: relative;
+        }
+
+    }
+
+    &.Left {
+
+        #Body {
+
+            .Wrapper {
+                @include float-right;
+
+                right: $contentWidth;
+            }
+
+        }
+
+        #Panel {
+            @include float-left;
+
+            left: $contentWidth;
+        }
+
+        #Content {
+            @include float-left;
+
+            left: $contentWidth;
+        }
+
+    }
+
+    &.Right {
+
+        #Body {
+
+            .Wrapper {
+                @include float-left;
+
+                left: $contentWidth;
+            }
+
+        }
+
+        #Panel {
+            @include float-right;
+
+            right: $contentWidth;
+        }
+
+        #Content {
+            @include float-right;
+                
+            right: $contentWidth;
+        }
+
+    }
+
+}
+
+html.flexbox #Frame {
+    text-align: left;
+
+    &.Fluid,
+    &.Fixed {
+
+        #Body {
+
+            .Wrapper {
+                @include display-box;
+                @include box-orient(horizontal);
+                @include box-align(stretch);
+            }
+        }
+
+        #Panel,
+        #Content {
+            float: none;
+        }
+
+    }
+
+    &.Left {
+
+        #Body {
+
+            .Wrapper {
+                @include box-direction(normal);
+            }
+
+        }
+
+    }
+
+    &.Right {
+
+        #Body {
+
+            .Wrapper {
+                @include box-direction(reverse);
+            }
+
+        }
+
+    }
+
+}

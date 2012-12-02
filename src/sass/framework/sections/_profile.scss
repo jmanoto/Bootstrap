@@ -1,0 +1,108 @@
+//  Copyright 2012 Kasper Kronborg Isager
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+
+.Section-Profile {
+
+	#Content {
+
+		h1.H,
+		.About,
+		#Status {
+			display: none;
+		}
+
+	}
+
+	#Panel {
+
+		.ProfilePhotoLarge {
+			width: 100%;
+		}
+
+		.UserBox {
+
+			.PhotoWrap {
+				margin: 0 10px 0 0;
+			}
+
+			.Email {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				line-height: 22px;
+			}
+
+		}
+
+	}
+
+	.DataList.Discussions {
+
+		.Item {
+			@include pie-clearfix;
+		}
+
+		@include datalist-layout;
+
+	}
+
+	@include activity-layout;
+
+	.DataList-Connections {
+
+		.Button {
+			margin: 0;
+		}
+
+	}
+
+	.Connection-Name {
+		line-height: 48px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.PreferenceGroup {
+		width: 100%;
+	}
+
+	.Info {
+		width: 100%;
+	}
+
+	dl.About {
+
+		dt,
+		dd {
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin: 0 0 5px 0;
+		}
+
+		dt {
+			@include float-left;
+
+			width: 75px;
+			clear: left;
+			text-align: left;
+		}
+
+		dd {
+			margin-left: 80px;
+		}
+
+	}
+
+}

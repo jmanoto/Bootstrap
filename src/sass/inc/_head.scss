@@ -1,28 +1,26 @@
-#Head {
-    @extend .navbar, .navbar-fixed-top;
+#Navigation {
+    @extend .navbar, .navbar-fixed-top, .navbar-inner;
     padding: 0 !important;
-    background: none;
+    border: {
+        top: none;
+    }
     
     a {
         font-weight: normal;
     }
     
-    .HeadInner {
-        @extend .navbar-inner;
-        
-        height: 41px;
-    }
-    
-    .Row {
-        @extend .container;
-    }
-    
-    .Brand {
+    h1 {
         @extend .brand;
+        line-height: 1em;
+    }
+
+    .Wrapper {
+        padding: 0 20px;
     }
     
-    .Nav {
+    .Menu {
         @extend .nav;
+        height: 40px;
         
         &.PullRight {
             @extend .pull-right;

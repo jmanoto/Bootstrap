@@ -1,10 +1,10 @@
-.BreadcrumbsWrapper {
-    @extend .span12;
-    @extend [class*="span"];
-}
-
-.Breadcrumbs {
+#Banner {
     @extend .breadcrumb;
-    
     display: block;
+
+    .Wrapper {
+        padding: 0 20px;
+        line-height: 25px;
+    }
+
 }
